@@ -42,6 +42,28 @@ function phonenumber()
        }
 }
 
+function passwordValidationLogin(){
+    var regexp= /^(?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,16}$/;
+    var pwd=document.getElementById("exampleInputPassword1");
+    if(regexp.test(pwd.value)){
+        if(pwd.length==8){
+            pwd.style.color="red";
+
+        }
+       else if(pwd.length>8 && pwd.length<11){
+           pwd.style.color="yellow";
+           }
+       else{
+       pwd.style.color="green";
+       }
+        return true;
+    }
+    else{
+    alert("enter valid password");
+    return false;
+    }
+}
+
 function validateRegistration(){
     let fname=document.getElementById("fname");
     let lname=document.getElementById("lname");
@@ -62,4 +84,25 @@ function validateRegistration(){
     }
   
     
+}
+function passwordValidationRegister(){
+    var regexp= /^(?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,16}$/;
+    var pwd=document.getElementById("inputPassword4");
+    if(regexp.test(pwd.value)){
+        if(pwd.length==8){
+            pwd.style.color="red";
+
+        }
+       else if(pwd.length>8 && pwd.length<11){
+           pwd.style.color="yellow";
+           }
+       else{
+       pwd.style.color="green";
+       }
+        return true;
+    }
+    else{
+    alert("enter valid password");
+    return false;
+    }
 }
